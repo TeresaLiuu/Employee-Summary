@@ -4,16 +4,16 @@ const Engineer = require('../lib/engineer');
 describe('Engineer', () => {
     let engineer;
     beforeEach(() => {
-        engineer = new Engineer('teresaliu', 'github.com');
+        engineer = new Engineer('teresa', 'TeresaLiuu');
     });
     describe('Initialization', () => {
         it('should create an object with an "githubName" property', () => {
-            expect(engineer.githubName).toEqual('teresaliu');
+            expect(engineer.githubName).toEqual('teresa');
         });
     });
     describe('getGithub', () => {
         it('should get the Github from the engineer', () => {
-            expect(engineer.getGithub()).toEqual('github.com');
+            expect(engineer.getGithub()).toEqual('TeresaLiiuu');
         });
     });
     describe('getRole',()=>{
