@@ -4,119 +4,124 @@ const fs = require('fs');
 const managerQuestions = [{
     type: 'input',
     name: 'managerName',
-    message: 'What is your manager name ?'
+    message: 'What is your manager\'s name ?'
 },
 {
     type: 'input',
     name: 'managerId',
-    message: 'What is your manager ID ?'
+    message: 'What is your manager\'s ID ?'
 },
 {
     type: 'input',
     name: 'managerEmail',
-    message: 'What is your manager email ?'
+    message: 'What is your manager\'s email ?'
 },
 {
     type: 'input',
     name: 'officeNumber',
-    message: 'What is your manager office number ?'
+    message: 'What is your manager\'s office number ?'
+}];
+
+const teamChoiceQuestions = [{
+    type: 'list',
+    name: 'employeeType',
+    message: 'Which type of team member would you like to add ? ',
+    choices: ['Engineer', 'Intern', 'No']
 }];
 
 const engineerQuestions = [{
     type: 'input',
     name: 'engineerName',
-    message: 'What is your engineer name ?'
+    message: 'What is your engineer\'s name ?'
 },
 {
     type: 'input',
     name: 'engineerId',
-    message: 'What is your engineer ID ?'
+    message: 'What is your engineer\'s ID ?'
 },
 {
     type: 'input',
     name: 'engineerEmail',
-    message: 'What is your engineer email ?'
+    message: 'What is your engineer\'s email ?'
 },
 {
     type: 'input',
     name: 'engineerGithub',
-    message: 'What is your engineer github user name ?'
+    message: 'What is your engineer\'s github user name ?'
 }];
 
 
 const internQuestions = [{
     type: 'input',
     name: 'internName',
-    message: 'What is your intern name ?'
+    message: 'What is your intern\'s name ?'
 },
 {
     type: 'input',
     name: 'internId',
-    message: 'What is your intern ID ?'
+    message: 'What is your intern\'s ID ?'
 },
 {
     type: 'input',
     name: 'internEmail',
-    message: 'What is your intern email ?'
+    message: 'What is your intern\'s email ?'
 },
 {
     type: 'input',
     name: 'internSchool',
-    message: 'What is your intern school ?'
+    message: 'What is your intern\'s school ?'
 }];
 
-async function addManager() {
-    try {
-        const manager = await inquirer.prompt(managerQuestions);
-    }
-    catch (error) {
-        console.error(error);
-    }
+function addManager() {
+    
+    return inquirer.prompt(managerQuestions);
+    
 };
 
+
+
 async function addEngineer() {
-    try {
-        const manager = await inquirer.prompt(engineerQuestions);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    
+    const engineerInput = await inquirer.prompt(engineerQuestions);
+    await chooseMember()
+    
 };
 
 async function addIntern() {
-    try {
-        const manager = await inquirer.prompt(internQuestions);
-    }
-    catch (error) {
-        console.error(error);
-    }
+    
+    const internInput = await inquirer.prompt(internQuestions);
+    await chooseMember()
 };
 
-function generateHtml() {
-    return `
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/c9c3a0343e.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style.css">
-        <title>${name}'s Resume</title>
-        <style>
-        
-        
-        </style>
-    </head>
-    <body>
-    
-    
-    
-    </body>
-    
-    </html>`
-
+function teamChoices(){
+return inquirer.prompt(teamChoiceQuestions);
 };
+
+
+async function chooseMember(){
+    const teamChoicesInput = await teamChoices();
+    
+    switch (teamChoicesInput.employeeType){
+        case 'Engineer' :
+            await addEngineer();       
+        break;
+        case 'Intern':
+            await addIntern();      
+        break;
+        default :
+        console.log ('write html');
+        break;
+    }
+ };
+
+
+module.exports = {
+    addManager ,
+    teamChoices,
+    addEngineer,
+    addIntern,
+    chooseMember
+}
+
+
+
