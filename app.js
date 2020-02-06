@@ -5,7 +5,7 @@ const engineer = require ('./lib/engineer');
 const intern = require ('./lib/intern');
 const html = require('./template/generateHtml');
 const fs = require ('fs');
-const questions = require ('./questions');
+const questions = require ('./lib/questions');
 
 async function init(){
     try{
