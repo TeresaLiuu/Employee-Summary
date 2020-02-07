@@ -1,6 +1,7 @@
 'use strict';
 
 const Employee = require('../lib/employee');
+
 describe('Employee', () => {
     let employee;
     beforeEach(() => {

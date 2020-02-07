@@ -1,10 +1,11 @@
 'use strict';
 
 const Intern = require ('../lib/intern');
+
 describe ('Intern', () =>{
     let intern;
     beforeEach(()=>{
-        intern = new Intern ('UW');
+        intern = new Intern (0, 'Teresa', 'engineer','test@gmail.com', 'UW');
     });
     describe('Initialization', () =>{
         it ('should create an object with an "school" property ', () =>{
@@ -12,8 +13,13 @@ describe ('Intern', () =>{
         });
     });
     describe('getSchool', () =>{
-        it('should get the school name of the intern', () =>{
+        it('should get the school of the intern', () =>{
             expect (intern.getSchool()).toEqual('UW');
+        });
+    });
+    describe('getRole',()=>{
+        it('should get the Role of the intern', () => {
+            expect(intern.getRole()).toEqual('Intern');
         });
     });
 });

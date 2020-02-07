@@ -4,7 +4,7 @@ const Manager = require ('../lib/manager');
 describe ('Manager',() =>{
     let manager;
     beforeEach(()=>{
-        manager = new Manager(1);        
+        manager = new Manager(0, 'Teresa', 'engineer','test@gmail.com', 1);        
     });
     describe('Initialization', () => {
         it ('should create an object with an "officeNumber" property', () =>{
