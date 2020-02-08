@@ -24,4 +24,5 @@ Here are the npm package.json used :
 - Manager info includes : Manager's name / ID / office number
 - Engineer info includes : Engineer's name / ID / email / github
 - Intern info includes : Intern's name / ID / school
+- After you input the info for each member, it will generate a html file displaying the members in their own info card
 
