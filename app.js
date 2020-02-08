@@ -14,16 +14,11 @@ const engineerTemp = require ('./template/engineerTemp');
 const internTemp = require ('./template/internTemp');
 const managerTemp = require ('./template/managerTemp');
 
-const teamMembers = []; //add team members to the array
-
-
-// function membersArray (){
-//     const member =  
-// }
+const teamMembers = []; 
 
 
 function generateMembers () {
-    const myTeam =[] ; //generate html from teamMembers array
+    const myTeam =[] ; 
     teamMembers.forEach(member =>{
         switch(member.getRole()){
             case 'Manager' :
