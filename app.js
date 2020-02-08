@@ -17,9 +17,9 @@ const managerTemp = require ('./template/managerTemp');
 const teamMembers = []; //add team members to the array
 
 
-function membersArray (){
-    const member =  
-}
+// function membersArray (){
+//     const member =  
+// }
 
 
 function generateMembers () {
