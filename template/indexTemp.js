@@ -1,4 +1,4 @@
-function generateHtml(manager) {
+function myTeam() {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -24,21 +24,7 @@ function generateHtml(manager) {
     <body>
         <div>
             <h1 class="text-center">Team Members </h1>
-        </div>z
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-              ${manager.id}
-            </div>
-            <ul class="list-group list-group-flush">
-              <li c
-              lass="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-          </div>
-    
-    
-    
+        </div>
     </body>
     
     </html>`
@@ -47,5 +33,5 @@ function generateHtml(manager) {
 
 
 module.exports = {
-    generateHtml
+    myTeam
 }
