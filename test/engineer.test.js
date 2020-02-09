@@ -4,7 +4,7 @@ const Engineer = require('../lib/engineer');
 describe('Engineer', () => {
     let engineer;
     beforeEach(() => {
-        engineer = new Engineer(0, 'Teresa', 'engineer', 'test@gmail.com', 'TeresaLiuu');
+        engineer = new Engineer(0, 'Teresa', 'test@gmail.com', 'TeresaLiuu');
     });
     describe('Initialization', () => {
         it('should create an object with an "githubName" property', () => {

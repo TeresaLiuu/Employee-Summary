@@ -5,7 +5,7 @@ const Employee = require('../lib/employee');
 describe('Employee', () => {
     let employee;
     beforeEach(() => {
-        employee = new Employee(0, 'Teresa', 'engineer', 'test@gmail.com');
+        employee = new Employee(0, 'Teresa', 'test@gmail.com');
     });
     describe('Initialization', () => {
         it('should create an object with an "id" property', () => {
@@ -14,21 +14,18 @@ describe('Employee', () => {
         it('should create an object with an "name" property', () => {
             expect(employee.name).toEqual('Teresa');
         });
-        it('should create an object with an "title" property', () => {
-            expect(employee.title).toEqual('engineer');
-        });
         it('should create an object with an "email" property',() =>{
-            expect(employee.email).toEqual('test@gmail.com')
+            expect(employee.email).toEqual('test@gmail.com');
         })
+    }); 
+    describe('getId', () => {
+        it('should get the Id of the employee', () => {
+            expect(employee.getId()).toEqual(0);
+        });
     });
     describe('getName', () => {
         it('should get the Name of the employee', () => {
             expect(employee.getName()).toEqual('Teresa');
-        });
-    });
-    describe('getId', () => {
-        it('should get the Id of the employee', () => {
-            expect(employee.getId()).toEqual(0);
         });
     });
     describe('getEmail', () => {

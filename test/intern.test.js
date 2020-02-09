@@ -5,7 +5,7 @@ const Intern = require ('../lib/intern');
 describe ('Intern', () =>{
     let intern;
     beforeEach(()=>{
-        intern = new Intern (0, 'Teresa', 'engineer','test@gmail.com', 'UW');
+        intern = new Intern (0, 'Teresa','test@gmail.com', 'UW');
     });
     describe('Initialization', () =>{
         it ('should create an object with an "school" property ', () =>{

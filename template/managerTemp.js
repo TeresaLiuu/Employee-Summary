@@ -1,8 +1,8 @@
-function generateTemp(){
+function generateTemp(manager){
     return`
     <div class="card" style="width: 18rem;">
             <div class="card-header">
-              ${manager.name}
+              ${manager.managerId}
             </div>
             <ul class="list-group list-group-flush">
               <li c

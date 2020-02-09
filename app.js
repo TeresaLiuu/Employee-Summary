@@ -14,7 +14,26 @@ const engineerTemp = require ('./template/engineerTemp');
 const internTemp = require ('./template/internTemp');
 const managerTemp = require ('./template/managerTemp');
 
-const teamMembers = []; 
+
+async function init() {
+    try {
+        const managerInput = await questions.addManager();
+        
+        const manager = new Manager (managerInput.managerId, 
+            managerInput.managerName,
+            managerInput.managerEmail,
+            'manager',
+            managerInput.officeNumber);
+        
+        const teamMembers = []; 
+        teamMembers.push(manager);
+         
+    }
+    catch (error) {
+        console.error(error);
+    }
+    await questions.chooseMember();
+}
 
 
 function generateMembers () {
@@ -28,7 +47,7 @@ function generateMembers () {
                 let eng = engineerTemp(member);
                 return myTeam.push(eng);
             case 'Intern':
-                let int = indexTemp(member);
+                let int = internTemp(member);
                 return myTeam.push(int);
             default:
                 console.log('something is wrong');
@@ -44,16 +63,6 @@ function generateHtml (html){
     })
 }
 
-
-async function init() {
-    try {
-        const managerInput = await questions.addManager();      
-    }
-    catch (error) {
-        console.error(error);
-    }
-    await questions.chooseMember();
-}
 
 
 
