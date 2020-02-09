@@ -13,19 +13,17 @@ const indexTemp = require('./template/indexTemp');
 const engineerTemp = require ('./template/engineerTemp');
 const internTemp = require ('./template/internTemp');
 const managerTemp = require ('./template/managerTemp');
-
+const teamMembers = []; 
 
 async function init() {
     try {
         const managerInput = await questions.addManager();
         
-        const manager = new Manager (managerInput.managerId, 
+        const manager = new Manager (
+            managerInput.managerId, 
             managerInput.managerName,
             managerInput.managerEmail,
-            'manager',
             managerInput.officeNumber);
-        
-        const teamMembers = []; 
         teamMembers.push(manager);
          
     }
@@ -33,6 +31,7 @@ async function init() {
         console.error(error);
     }
     await questions.chooseMember();
+    generateMembers();
 }
 
 
@@ -41,6 +40,7 @@ function generateMembers () {
     teamMembers.forEach(member =>{
         switch(member.getRole()){
             case 'Manager' :
+                console.log("managerid",member.getId());
                 let man = managerTemp(member);
                 return myTeam.push(man);
             case 'Engineer':
@@ -53,6 +53,8 @@ function generateMembers () {
                 console.log('something is wrong');
         }
     });
+    console.log(myTeam);
+
     const index = indexTemp(myTeam.join("\n"));
     generateHtml (index);
 }

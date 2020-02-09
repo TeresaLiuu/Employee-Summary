@@ -1,14 +1,14 @@
-function generateTemp(){
+function generateTemp(intern){
     return`
     <div class="card" style="width: 18rem;">
             <div class="card-header">
-              ${manager.name}
+              ${intern.getName()}
+              ${intern.getRole()}
             </div>
             <ul class="list-group list-group-flush">
-              <li c
-              lass="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">${intern.getId()}</li>
+              <li class="list-group-item">${intern.getEmail()}</li>
+              <li class="list-group-item">${intern.school}</li>
             </ul>
           </div>
           `

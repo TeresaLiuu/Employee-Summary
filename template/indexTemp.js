@@ -1,4 +1,4 @@
-function myTeam() {
+function myTeam(myTeamdata) {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -25,6 +25,7 @@ function myTeam() {
         <div>
             <h1 class="text-center">Team Members </h1>
         </div>
+        ${myTeamdata}
     </body>
     
     </html>`
@@ -32,6 +33,4 @@ function myTeam() {
 };
 
 
-module.exports = {
-    myTeam
-}
+module.exports = myTeam;

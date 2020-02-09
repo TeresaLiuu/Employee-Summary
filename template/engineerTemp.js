@@ -1,14 +1,14 @@
-function generateTemp(){
+function generateTemp(engineer){
     return`
     <div class="card" style="width: 18rem;">
             <div class="card-header">
-              ${manager.name}
+              ${engineer.getName()}
+              ${engineer.getRole()}
             </div>
             <ul class="list-group list-group-flush">
-              <li c
-              lass="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">${engineer.getId()}</li>
+              <li class="list-group-item">${engineer.getEmail()}</li>
+              <li class="list-group-item">${engineer.githubName}</li>
             </ul>
           </div>
           `
