@@ -8,7 +8,7 @@ Therefore, you can have quick access to emails and Github profiles.
 
 ![inAction1](https://media.giphy.com/media/cLr3hkm7OZ1G3dpuLv/giphy.gif)
 
-![alt text](/assets/screenShot.png)
+![alt text](/assets/ScreenShot.png)
 
 ## Table 0f Contents
 - General Info
