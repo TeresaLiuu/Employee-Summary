@@ -23,24 +23,24 @@ async function init() {
             managerInput.managerId, 
             managerInput.managerName,
             managerInput.managerEmail,
-            managerInput.officeNumber);
+            managerInput.officeNumber);        
         teamMembers.push(manager);
-         
     }
     catch (error) {
         console.error(error);
     }
-    await questions.chooseMember();
+    await questions.chooseMember(teamMembers);
     generateMembers();
 }
 
 
 function generateMembers () {
     const myTeam =[] ; 
+    console.log(teamMembers);
     teamMembers.forEach(member =>{
+        console.log(member);
         switch(member.getRole()){
             case 'Manager' :
-                console.log("managerid",member.getId());
                 let man = managerTemp(member);
                 return myTeam.push(man);
             case 'Engineer':
