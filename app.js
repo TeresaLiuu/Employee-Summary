@@ -36,9 +36,7 @@ async function init() {
 
 function generateMembers () {
     const myTeam =[] ; 
-    console.log(teamMembers);
     teamMembers.forEach(member =>{
-        console.log(member);
         switch(member.getRole()){
             case 'Manager' :
                 let man = managerTemp(member);
@@ -53,7 +51,6 @@ function generateMembers () {
                 console.log('something is wrong');
         }
     });
-    console.log(myTeam);
 
     const index = indexTemp(myTeam.join("\n"));
     generateHtml (index);

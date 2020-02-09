@@ -18,7 +18,14 @@ function myTeam(myTeamdata) {
             color:white;
             height:100px;
             padding:20px;
-          }    
+          }
+          .card {
+            margin: 30px;
+            font-size: 20px;
+        }
+        .card-header{
+            background-color:#E8BFAE ;
+        }
         </style>
     </head>
     <body>
